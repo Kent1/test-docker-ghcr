@@ -26,8 +26,5 @@ jobs:
           path: build/libs
       - uses: gradle/gradle-build-action@v2
         name: Build and upload container
-        env: 
-          USERNAME: ${{ secrets.USERNAME }}
-          PASSWORD: ${{ secrets.PASSWORD }}
         with:
-          arguments: jib -Djib.to.auth.username=$USERNAME -Djib.to.auth.password=$PASSWORD
+          arguments: jib -Djib.to.auth.username=${{ secrets.USERNAME }} -Djib.to.auth.password=${{ secrets.PASSWORD }}
