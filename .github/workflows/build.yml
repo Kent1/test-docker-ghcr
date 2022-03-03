@@ -26,4 +26,4 @@ jobs:
       - uses: gradle/gradle-build-action@v2
         name: Build and upload container
         with:
-          arguments: -Djib.to.auth.username=$USERNAME -Djib.to.auth.password=$PASSWORD
+          arguments: jib -Djib.to.auth.username=$USERNAME -Djib.to.auth.password=$PASSWORD
